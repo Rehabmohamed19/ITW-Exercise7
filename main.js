@@ -6,20 +6,31 @@ let data = [{
     title : "Card title",
     cardDesc  : "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
+  {
+    title : "Card title",
+    cardDesc  : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+  },
+  {
+    title : "Card title",
+    cardDesc  : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+  },
+
 
 ];
 
 const container=document.createElement("div")
 container.className="container"
 
-const row2=document.createElement("div")
-row2.className="row gy-3"
+const row3=document.createElement("div");
+row3.className="row gy-3";
 
 for (let i = 0; i < data.length; i++) {
+  
+  const row2=document.createElement("div")
+  row2.className="row-container"
     
 const cardBody=document.createElement("div")
-cardBody.className="card-body col-md-4 d-flex bg-primary  text-white align-items-center gap-5 mx-3 p-3 rounded"
-
+cardBody.className="card-body col-md-4 d-flex bg-primary text-white align-items-center gap-5 mx-3 p-3 rounded"
 
 const textWrapper=document.createElement("div")
 textWrapper.className="text-wrapper col-md-5"
@@ -38,7 +49,8 @@ btn.className="btn btn-danger"
 btn.innerText="Delete"
 
 document.body.append(container)
-container.append(row2);
+container.append(row3);
+row3.append(row2);
 row2.append(cardBody)
 cardBody.append(textWrapper)
 textWrapper.append(cardTitle)
@@ -53,7 +65,7 @@ cardText.innerText=`${data[i].cardDesc}`;
 
 
 const btns = document.querySelectorAll('.btn');
-const parentRow = document.querySelectorAll('.row');
+const parentRow = document.querySelectorAll('.row-container');
 const removedCard = document.querySelectorAll('.card-body');
 
 for (let i = 0; i < btns.length; i++) {
